@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import ScoreCircle from './ScoreCircle';
 
+// @ts-ignore
 function ResumeCard({ resume }: ResumeCardProps) {
     const { id, companyName, jobTitle, feedback, imagePath } = resume;
 
@@ -21,14 +22,14 @@ function ResumeCard({ resume }: ResumeCardProps) {
                 </div>
             </div>
 
-            <div className="gradient-border animate-in fade-in duration-1000">
-                <div className="h-full w-full">
+            <div className="animate-in fade-in duration-1000 overflow-hidden rounded-md">
+                <div className="h-full w-full ">
                     <img
                         src={imagePath}
                         alt={`${companyName} resume`}
                         className="w-full h-[350px] max-sm:h-[200px] object-cover object-top"
                         onError={(e) => {
-                            e.currentTarget.src = '/default-image.jpg'; // fallback image path
+                            e.currentTarget.src = '/default-image.jpg';
                         }}
                     />
                 </div>
